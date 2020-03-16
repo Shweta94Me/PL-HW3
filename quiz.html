@@ -75,9 +75,39 @@ button {
         }
         }
         catch(e){
-            alert("Invalid Text");
+            alert("Inavlid Text");
         }
     }
+
+    function complexAdd() {
+        try{
+            let compint1 = Math.floor(Math.random() * 10); 
+            let compint2 = Math.floor(Math.random() * 10);
+            let compint3 = Math.floor(Math.random() * 10); 
+            let compint4 = Math.floor(Math.random() * 10);
+            let correctsum13 = compint1 + compint3;
+            let correctsum24 = compint2 + compint4;
+            let answer = prompt(compint1 + "+" + compint2 + "i" + "  +  " + compint3 + "+" + compint4 + "i");
+            let complexArr = answer.split("+");
+            if(parseInt(complexArr[0]) === correctsum13 && parseInt(complexArr[1].substring(0,complexArr[1].indexOf("i"))) === correctsum24){
+                 quesAnswered = quesAnswered + 1;
+                 rightAns =rightAns + 1;
+                 let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+                 alert(output);
+            }
+            else{
+                quesAnswered = quesAnswered + 1;
+                wrongAns = wrongAns+1;
+                let output = "Wrong!!\n" + "The Correct Answer is : " + correctsum13 + "+" + correctsum24 + "i\n"+ "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+                alert(output);
+            }
+        }
+        catch(e){
+            alert("Inavlid Text");
+        }
+    }
+
+
 
     function checkScore(){
         let output = "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
@@ -105,8 +135,8 @@ button {
     <td><button type="button" onclick="alert('Hello world!')">Float Subtraction</button></td>
   </tr>
   <tr>
-    <td><button type="button" onclick="alert('Hello world!')">Complex Addition</button></td>
-    <td><button type="button" onclick="alert('Hello world!')">Complex Subtraction</button></td>
+    <td><button type="button" onclick="complexAdd()">Complex Addition</button></td>
+    <td><button type="button" onclick="complexSub">Complex Subtraction</button></td>
   </tr>
   <tr>
     <td><button type="button" onclick="checkScore()">Check Score</button></td>
