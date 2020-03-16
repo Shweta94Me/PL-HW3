@@ -1,6 +1,6 @@
 Project in group
 
-1.) Shweta Sharad Mestry
+    Shweta Sharad Mestry
     B00815342
     Email: smestry1@binghamton.edu
 
