@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Maths Quiz</title>
+</head>
+<style>
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+body {
+    text-align:center;
+    {% comment %} background-image: url('math.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; {% endcomment %}
+    }
+
+button {
+     width: 100%;
+     height: 100%;
+}
+
+</style>
+<body>
+    <script type="text/javascript">
+    let quesAnswered = 0;
+    let rightAns = 0;
+    let wrongAns = 0;
+    function intAdd(){
+        try{
+        let int1 = Math.floor(Math.random() * 10); 
+        let int2 = Math.floor(Math.random() * 10);
+        let correctAns = int1 + int2;
+        let answer = prompt(int1 + " + " + int2 + " =");
+        if(parseInt(answer) === correctAns){
+            quesAnswered = quesAnswered + 1;
+            rightAns =rightAns + 1;
+            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            alert(output);
+        }
+        else{
+            quesAnswered = quesAnswered + 1;
+            wrongAns = wrongAns+1;
+            let output = "Wrong!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            alert(output);
+        }
+        }
+        catch(e){
+            alert("Invalid Text");
+        }
+    }
+
+    function intSub(){
+        try{
+        let int1 = Math.floor(Math.random() * 10); 
+        let int2 = Math.floor(Math.random() * 10);
+        let correctAns = int1 - int2;
+        let answer = prompt(int1 + " - " + int2 + " =");
+        if(parseInt(answer) === correctAns){
+            quesAnswered = quesAnswered + 1;
+            rightAns =rightAns + 1;
+            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            alert(output);
+        }
+        else{
+            quesAnswered = quesAnswered + 1;
+            wrongAns = wrongAns+1;
+            let output = "Wrong!!\n" +  "The Correct Answer is : " + answer 
+            + "\n"  + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            alert(output);
+        }
+        }
+        catch(e){
+            alert("Invalid Text");
+        }
+    }
+
+    function checkScore(){
+        let output = "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+        alert(output);
+    }
+
+    function resetScore(){
+        quesAnswered = 0;
+        rightAns = 0;
+        wrongAns = 0;
+    }
+
+        
+    </script>
+
+<h3>Simple Math Quiz</h3>
+
+<table class="center" >
+  <tr>
+    <td><button type="button" onclick="intAdd()">Integer Addition</button></td>
+    <td><button type="button" onclick="intSub()">Integer Subtraction</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="alert('Hello world!')">Float Addition</button></td>
+    <td><button type="button" onclick="alert('Hello world!')">Float Subtraction</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="alert('Hello world!')">Complex Addition</button></td>
+    <td><button type="button" onclick="alert('Hello world!')">Complex Subtraction</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="checkScore()">Check Score</button></td>
+    <td><button type="button" onclick="resetScore()">Reset Score</button></td>
+  </tr>
+</table>
+</body>
+</html>
