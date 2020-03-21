@@ -32,8 +32,8 @@ button {
     let wrongAns = 0;
     function intAdd(){
         try{
-        let int1 = Math.floor(Math.random() * 10); 
-        let int2 = Math.floor(Math.random() * 10);
+        let int1 = Math.floor((Math.random()*9)+1);
+        let int2 = Math.floor((Math.random()*9)+1);
         let correctAns = int1 + int2;
         let answer = prompt(int1 + " + " + int2 + " =");
         if(parseInt(answer) === correctAns){
@@ -45,7 +45,7 @@ button {
         else{
             quesAnswered = quesAnswered + 1;
             wrongAns = wrongAns+1;
-            let output = "Wrong!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+            let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         }
@@ -56,8 +56,8 @@ button {
 
     function intSub(){
         try{
-        let int1 = Math.floor(Math.random() * 10); 
-        let int2 = Math.floor(Math.random() * 10);
+        let int1 = Math.floor((Math.random()*9)+1);
+        let int2 = Math.floor((Math.random()*9)+1);
         let correctAns = int1 - int2;
         let answer = prompt(int1 + " - " + int2 + " =");
         if(parseInt(answer) === correctAns){
@@ -69,8 +69,7 @@ button {
         else{
             quesAnswered = quesAnswered + 1;
             wrongAns = wrongAns+1;
-            let output = "Wrong!!\n" +  "The Correct Answer is : " + answer 
-            + "\n"  + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+            let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         }
@@ -81,24 +80,32 @@ button {
 
     function complexAdd() {
         try{
-            let compint1 = Math.floor(Math.random() * 10); 
-            let compint2 = Math.floor(Math.random() * 10);
-            let compint3 = Math.floor(Math.random() * 10); 
-            let compint4 = Math.floor(Math.random() * 10);
+            let compint1 = Math.floor((Math.random()*9)+1);
+            let compint2 = Math.floor((Math.random()*9)+1);
+            let compint3 = Math.floor((Math.random()*9)+1);
+            let compint4 = Math.floor((Math.random()*9)+1);
             let correctsum13 = compint1 + compint3;
             let correctsum24 = compint2 + compint4;
+            const correctAns = get_complex(correctsum13,correctsum24);
             let answer = prompt(compint1 + "+" + compint2 + "i" + "  +  " + compint3 + "+" + compint4 + "i");
-            let complexArr = answer.split("+");
-            if(parseInt(complexArr[0]) === correctsum13 && parseInt(complexArr[1].substring(0,complexArr[1].indexOf("i"))) === correctsum24){
+            // let complexArr = answer.split("+");
+            /*if(parseInt(complexArr[0]) === correctsum13 && parseInt(complexArr[1].substring(0,complexArr[1].indexOf("i"))) === correctsum24){
                  quesAnswered = quesAnswered + 1;
                  rightAns =rightAns + 1;
                  let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
                  alert(output);
+            }*/
+            if(answer === correctAns){
+                quesAnswered = quesAnswered + 1;
+                rightAns =rightAns + 1;
+                let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
             }
             else{
                 quesAnswered = quesAnswered + 1;
                 wrongAns = wrongAns+1;
-                let output = "Wrong!!\n" + "The Correct Answer is : " + correctsum13 + "+" + correctsum24 + "i\n"+ "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                /*let output = "Wrong!!\n" + "The Correct Answer is : " + correctsum13 + "+" + correctsum24 + "i\n"+ "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;*/
+                let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
                 alert(output);
             }
         }
@@ -109,10 +116,10 @@ button {
 
     function complexSubtraction(){
         try{
-            const cmplxInt1 = Math.floor(Math.random()*10);
-            const cmplxInt2 = Math.floor(Math.random()*10);
-            const cmplxInt3 = Math.floor(Math.random()*10);
-            const cmplxInt4 = Math.floor(Math.random()*10);
+            const cmplxInt1 = Math.floor((Math.random()*9)+1);
+            const cmplxInt2 = Math.floor((Math.random()*9)+1);
+            const cmplxInt3 = Math.floor((Math.random()*9)+1);
+            const cmplxInt4 = Math.floor((Math.random()*9)+1);
             const crctsub13 = cmplxInt1 - cmplxInt3;
             const crctsub24 = cmplxInt2 - cmplxInt4;
             const correctAns = get_complex(crctsub13,crctsub24);
@@ -144,11 +151,11 @@ button {
 
     function floatAddition() {
         try{
-            const Num1 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
-            const Num2 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const Num1 = parseFloat(Math.floor((Math.random()*9)+1).toString()+"."+ Math.floor((Math.random()*9)+1));
+            const Num2 = parseFloat(Math.floor((Math.random()*9)+1).toString()+"."+ Math.floor((Math.random()*9)+1));
             const correctAns = Num1 + Num2;
             const ans = prompt(Num1 + " + " + Num2 + " =");
-            if(parseFloat(ans) === parseFloat(correctAns.toFixed(1))){
+            if(parseFloat(ans).toFixed(1) === parseFloat(correctAns.toFixed(1)).toString()){
                 quesAnswered = quesAnswered + 1;
                 rightAns =rightAns + 1;
                 let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
@@ -169,11 +176,11 @@ button {
 
     function floatSubtraction() {
         try{
-            const Num1 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
-            const Num2 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const Num1 = parseFloat(Math.floor((Math.random()*9)+1).toString()+"."+ Math.floor((Math.random()*9)+1));
+            const Num2 = parseFloat(Math.floor((Math.random()*9)+1).toString()+"."+ Math.floor((Math.random()*9)+1));
             const correctAns = Num1 - Num2;
             const ans = prompt(Num1 + " - " + Num2 + " =");
-            if(parseFloat(ans) === parseFloat(correctAns.toFixed(1))){
+            if(parseFloat(ans).toFixed(1) === parseFloat(correctAns.toFixed(1)).toString()){
                 quesAnswered = quesAnswered + 1;
                 rightAns =rightAns + 1;
                 let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
