@@ -39,13 +39,13 @@ button {
         if(parseInt(answer) === correctAns){
             quesAnswered = quesAnswered + 1;
             rightAns =rightAns + 1;
-            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         else{
             quesAnswered = quesAnswered + 1;
             wrongAns = wrongAns+1;
-            let output = "Wrong!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            let output = "Wrong!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         }
@@ -63,19 +63,19 @@ button {
         if(parseInt(answer) === correctAns){
             quesAnswered = quesAnswered + 1;
             rightAns =rightAns + 1;
-            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         else{
             quesAnswered = quesAnswered + 1;
             wrongAns = wrongAns+1;
             let output = "Wrong!!\n" +  "The Correct Answer is : " + answer 
-            + "\n"  + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+            + "\n"  + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
             alert(output);
         }
         }
         catch(e){
-            alert("Inavlid Text");
+            alert("Invalid Text");
         }
     }
 
@@ -92,25 +92,107 @@ button {
             if(parseInt(complexArr[0]) === correctsum13 && parseInt(complexArr[1].substring(0,complexArr[1].indexOf("i"))) === correctsum24){
                  quesAnswered = quesAnswered + 1;
                  rightAns =rightAns + 1;
-                 let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+                 let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
                  alert(output);
             }
             else{
                 quesAnswered = quesAnswered + 1;
                 wrongAns = wrongAns+1;
-                let output = "Wrong!!\n" + "The Correct Answer is : " + correctsum13 + "+" + correctsum24 + "i\n"+ "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+                let output = "Wrong!!\n" + "The Correct Answer is : " + correctsum13 + "+" + correctsum24 + "i\n"+ "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
                 alert(output);
             }
         }
         catch(e){
-            alert("Inavlid Text");
+            alert("Invalid Text");
         }
     }
 
+    function complexSubtraction(){
+        try{
+            const cmplxInt1 = Math.floor(Math.random()*10);
+            const cmplxInt2 = Math.floor(Math.random()*10);
+            const cmplxInt3 = Math.floor(Math.random()*10);
+            const cmplxInt4 = Math.floor(Math.random()*10);
+            const crctsub13 = cmplxInt1 - cmplxInt3;
+            const crctsub24 = cmplxInt2 - cmplxInt4;
+            const correctAns = get_complex(crctsub13,crctsub24);
+            let answer = prompt("(" + cmplxInt1 + "+" + cmplxInt2 + "i)" + "  -  (" + cmplxInt3 + "+" + cmplxInt4 + "i)");
+            if(answer === correctAns){
+                quesAnswered = quesAnswered + 1;
+                rightAns =rightAns + 1;
+                let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+            else {
+                quesAnswered = quesAnswered + 1;
+                wrongAns = wrongAns+1;
+                let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+        }
+        catch (e) {
+            alert('Invalid Text');
+        }
+    }
 
+    function get_complex(real, imaginary) {
+        if(imaginary === '0') return '' + real;
+        if(real === 0) return '' + imaginary + 'i';
+        if(imaginary < 0) return '' + real + imaginary + 'i';
+        return '' + real + '+' + imaginary + 'i';
+    }
+
+    function floatAddition() {
+        try{
+            const Num1 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const Num2 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const correctAns = Num1 + Num2;
+            const ans = prompt(Num1 + " + " + Num2 + " =");
+            if(parseFloat(ans) === parseFloat(correctAns.toFixed(1))){
+                quesAnswered = quesAnswered + 1;
+                rightAns =rightAns + 1;
+                let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+            else {
+                quesAnswered = quesAnswered + 1;
+                wrongAns = wrongAns+1;
+                let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+
+        }
+        catch (e) {
+            alert("Invalid Text");
+        }
+    }
+
+    function floatSubtraction() {
+        try{
+            const Num1 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const Num2 = parseFloat(Math.floor(Math.random()*10).toString()+"."+ Math.floor(Math.random()*10));
+            const correctAns = Num1 - Num2;
+            const ans = prompt(Num1 + " - " + Num2 + " =");
+            if(parseFloat(ans) === parseFloat(correctAns.toFixed(1))){
+                quesAnswered = quesAnswered + 1;
+                rightAns =rightAns + 1;
+                let output = "Correct!!\n" + "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+            else {
+                quesAnswered = quesAnswered + 1;
+                wrongAns = wrongAns+1;
+                let output = "Wrong Answer.\n" + "The correct answer is:" +  correctAns + ".\nTotal : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
+                alert(output);
+            }
+        }
+        catch (e) {
+            alert("Invalid Text");
+        }
+    }
 
     function checkScore(){
-        let output = "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns
+        let output = "Total : " + quesAnswered + "\n" + "Correct : " + rightAns + "\n" + "Wrong : " + wrongAns;
         alert(output);
     }
 
@@ -131,12 +213,12 @@ button {
     <td><button type="button" onclick="intSub()">Integer Subtraction</button></td>
   </tr>
   <tr>
-    <td><button type="button" onclick="alert('To Do!')">Float Addition</button></td>
-    <td><button type="button" onclick="alert('To Do!')">Float Subtraction</button></td>
+    <td><button type="button" onclick="floatAddition()">Float Addition</button></td>
+    <td><button type="button" onclick="floatSubtraction()">Float Subtraction</button></td>
   </tr>
   <tr>
     <td><button type="button" onclick="complexAdd()">Complex Addition</button></td>
-    <td><button type="button" onclick="alert('To Do!')">Complex Subtraction</button></td>
+    <td><button type="button" onclick="complexSubtraction()">Complex Subtraction</button></td>
   </tr>
   <tr>
     <td><button type="button" onclick="checkScore()">Check Score</button></td>
